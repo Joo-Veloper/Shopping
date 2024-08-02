@@ -1,4 +1,4 @@
-package io.core.member.playtest;
+package io.core.member;
 
 import io.core.member.entity.Grade;
 import io.core.member.entity.Member;
