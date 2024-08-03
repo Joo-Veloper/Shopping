@@ -1,16 +1,18 @@
 package io.core.order.service;
 
 import io.core.discount.repository.DiscountPolicy;
-import io.core.discount.repository.FixDiscountPolicy;
 import io.core.member.entity.Member;
 import io.core.member.repository.MemberRepository;
-import io.core.member.repository.MemoryMemberRepository;
 import io.core.order.entity.Order;
 
 public class OrderServiceImpl implements OrderService {
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    private final MemberRepository memberRepository;
+    private final DiscountPolicy discountPolicy;
 
-    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
