@@ -2,6 +2,7 @@ package io.core.config;
 
 import io.core.discount.repository.DiscountPolicy;
 import io.core.discount.repository.FixDiscountPolicy;
+import io.core.discount.repository.RateDiscountPolicy;
 import io.core.member.repository.MemberRepository;
 import io.core.member.repository.MemoryMemberRepository;
 import io.core.member.service.MemberService;
@@ -23,7 +24,8 @@ public class AppConfig {
     }
 
     public DiscountPolicy discountPolicy() {
-        return new FixDiscountPolicy();
+//        return new FixDiscountPolicy();
+        return new RateDiscountPolicy();
     }
 
 }
