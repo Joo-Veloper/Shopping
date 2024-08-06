@@ -1,6 +1,5 @@
 package io.core.singleton;
 
-import io.core.beandefination.SingletonService;
 import io.core.config.AppConfig;
 import io.core.member.service.MemberService;
 import org.assertj.core.api.Assertions;

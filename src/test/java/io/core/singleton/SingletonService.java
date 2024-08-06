@@ -1,4 +1,4 @@
-package io.core.beandefination;
+package io.core.singleton;
 
 public class SingletonService {
     private static final SingletonService instance = new SingletonService();
