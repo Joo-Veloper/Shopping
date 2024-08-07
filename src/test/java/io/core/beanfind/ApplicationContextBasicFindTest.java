@@ -1,6 +1,6 @@
 package io.core.beanfind;
 
-import io.core.config.AppConfig;
+import io.core.scan.AppConfig;
 import io.core.member.service.MemberService;
 import io.core.member.service.MemberServiceImpl;
 import org.junit.jupiter.api.Assertions;

@@ -1,13 +1,11 @@
 package io.core.order;
 
-import io.core.config.AppConfig;
+import io.core.scan.AppConfig;
 import io.core.member.entity.Grade;
 import io.core.member.entity.Member;
 import io.core.member.service.MemberService;
-import io.core.member.service.MemberServiceImpl;
 import io.core.order.entity.Order;
 import io.core.order.service.OrderService;
-import io.core.order.service.OrderServiceImpl;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

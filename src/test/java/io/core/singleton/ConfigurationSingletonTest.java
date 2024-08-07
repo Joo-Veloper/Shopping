@@ -1,6 +1,6 @@
 package io.core.singleton;
 
-import io.core.config.AppConfig;
+import io.core.scan.AppConfig;
 import io.core.member.repository.MemberRepository;
 import io.core.member.service.MemberServiceImpl;
 import io.core.order.service.OrderServiceImpl;

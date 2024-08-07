@@ -1,10 +1,11 @@
 package io.core.member.repository;
 
 import io.core.member.entity.Member;
+import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;
-
+@Component
 public class MemoryMemberRepository implements MemberRepository {
     private static Map<Long, Member> store = new HashMap<>();
     @Override

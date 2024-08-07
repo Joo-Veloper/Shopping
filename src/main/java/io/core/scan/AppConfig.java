@@ -1,7 +1,6 @@
-package io.core.config;
+package io.core.scan;
 
 import io.core.discount.repository.DiscountPolicy;
-import io.core.discount.repository.FixDiscountPolicy;
 import io.core.discount.repository.RateDiscountPolicy;
 import io.core.member.repository.MemberRepository;
 import io.core.member.repository.MemoryMemberRepository;
