@@ -1,8 +1,7 @@
-package io.core.member.service;
+package io.core.global.member.service;
 
-import io.core.member.entity.Member;
-import io.core.member.repository.MemberRepository;
-import io.core.member.repository.MemoryMemberRepository;
+import io.core.global.member.entity.Member;
+import io.core.global.member.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

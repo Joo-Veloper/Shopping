@@ -1,4 +1,4 @@
-package io.core.member.entity;
+package io.core.global.member.entity;
 
 public enum Grade {
     BASIC,

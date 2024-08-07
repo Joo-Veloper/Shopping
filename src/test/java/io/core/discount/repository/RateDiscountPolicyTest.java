@@ -1,7 +1,8 @@
 package io.core.discount.repository;
 
-import io.core.member.entity.Grade;
-import io.core.member.entity.Member;
+import io.core.global.discount.repository.RateDiscountPolicy;
+import io.core.global.member.entity.Grade;
+import io.core.global.member.entity.Member;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

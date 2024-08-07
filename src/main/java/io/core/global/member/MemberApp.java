@@ -1,9 +1,9 @@
-package io.core.member;
+package io.core.global.member;
 
-import io.core.scan.AppConfig;
-import io.core.member.entity.Grade;
-import io.core.member.entity.Member;
-import io.core.member.service.MemberService;
+import io.core.global.scan.AppConfig;
+import io.core.global.member.entity.Grade;
+import io.core.global.member.entity.Member;
+import io.core.global.member.service.MemberService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

@@ -1,4 +1,4 @@
-package io.core;
+package io.core.global;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

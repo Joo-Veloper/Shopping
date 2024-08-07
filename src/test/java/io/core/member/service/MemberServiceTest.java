@@ -1,8 +1,9 @@
 package io.core.member.service;
 
-import io.core.scan.AppConfig;
-import io.core.member.entity.Grade;
-import io.core.member.entity.Member;
+import io.core.global.member.service.MemberService;
+import io.core.global.scan.AppConfig;
+import io.core.global.member.entity.Grade;
+import io.core.global.member.entity.Member;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

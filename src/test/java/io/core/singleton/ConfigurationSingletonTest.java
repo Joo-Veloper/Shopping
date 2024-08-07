@@ -1,9 +1,9 @@
 package io.core.singleton;
 
-import io.core.scan.AppConfig;
-import io.core.member.repository.MemberRepository;
-import io.core.member.service.MemberServiceImpl;
-import io.core.order.service.OrderServiceImpl;
+import io.core.global.scan.AppConfig;
+import io.core.global.member.repository.MemberRepository;
+import io.core.global.member.service.MemberServiceImpl;
+import io.core.global.order.service.OrderServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;

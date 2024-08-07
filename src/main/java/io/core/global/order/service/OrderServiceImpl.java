@@ -1,9 +1,9 @@
-package io.core.order.service;
+package io.core.global.order.service;
 
-import io.core.discount.repository.DiscountPolicy;
-import io.core.member.entity.Member;
-import io.core.member.repository.MemberRepository;
-import io.core.order.entity.Order;
+import io.core.global.discount.repository.DiscountPolicy;
+import io.core.global.member.entity.Member;
+import io.core.global.member.repository.MemberRepository;
+import io.core.global.order.entity.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

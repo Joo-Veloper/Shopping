@@ -1,6 +1,6 @@
-package io.core.member.repository;
+package io.core.global.member.repository;
 
-import io.core.member.entity.Member;
+import io.core.global.member.entity.Member;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;

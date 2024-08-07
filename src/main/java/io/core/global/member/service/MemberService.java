@@ -1,6 +1,6 @@
-package io.core.member.service;
+package io.core.global.member.service;
 
-import io.core.member.entity.Member;
+import io.core.global.member.entity.Member;
 
 public interface MemberService {
     void join(Member member);

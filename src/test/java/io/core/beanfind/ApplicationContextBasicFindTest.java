@@ -1,8 +1,8 @@
 package io.core.beanfind;
 
-import io.core.scan.AppConfig;
-import io.core.member.service.MemberService;
-import io.core.member.service.MemberServiceImpl;
+import io.core.global.scan.AppConfig;
+import io.core.global.member.service.MemberService;
+import io.core.global.member.service.MemberServiceImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

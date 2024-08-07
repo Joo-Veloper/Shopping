@@ -1,4 +1,4 @@
-package io.core.order.entity;
+package io.core.global.order.entity;
 
 public class Order {
     private Long MemberId;

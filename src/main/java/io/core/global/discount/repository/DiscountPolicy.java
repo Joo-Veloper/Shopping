@@ -1,6 +1,6 @@
-package io.core.discount.repository;
+package io.core.global.discount.repository;
 
-import io.core.member.entity.Member;
+import io.core.global.member.entity.Member;
 
 public interface DiscountPolicy {
 

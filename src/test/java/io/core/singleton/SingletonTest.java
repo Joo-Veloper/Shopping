@@ -1,7 +1,7 @@
 package io.core.singleton;
 
-import io.core.scan.AppConfig;
-import io.core.member.service.MemberService;
+import io.core.global.scan.AppConfig;
+import io.core.global.member.service.MemberService;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

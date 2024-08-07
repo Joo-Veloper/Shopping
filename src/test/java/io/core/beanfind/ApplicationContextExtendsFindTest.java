@@ -1,9 +1,8 @@
 package io.core.beanfind;
 
-import io.core.discount.repository.DiscountPolicy;
-import io.core.discount.repository.FixDiscountPolicy;
-import io.core.discount.repository.RateDiscountPolicy;
-import org.junit.jupiter.api.Assertions;
+import io.core.global.discount.repository.DiscountPolicy;
+import io.core.global.discount.repository.FixDiscountPolicy;
+import io.core.global.discount.repository.RateDiscountPolicy;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.NoUniqueBeanDefinitionException;
@@ -12,7 +11,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.util.Map;
-import java.util.Objects;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;

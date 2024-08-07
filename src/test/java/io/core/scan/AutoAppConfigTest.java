@@ -1,7 +1,7 @@
 package io.core.scan;
 
-import io.core.AutoAppConfig;
-import io.core.member.service.MemberService;
+import io.core.global.AutoAppConfig;
+import io.core.global.member.service.MemberService;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
