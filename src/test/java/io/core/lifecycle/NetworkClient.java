@@ -1,10 +1,6 @@
 package io.core.lifecycle;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.DisposableBean;
-import org.springframework.beans.factory.InitializingBean;
-
-public class NetworkClient implements InitializingBean, DisposableBean {
+public class NetworkClient{
     private String url;
 
     public NetworkClient() {
@@ -37,16 +33,14 @@ public class NetworkClient implements InitializingBean, DisposableBean {
      */
 
     // 의존관계가 끝나면 주입하겠다.
-    @Override
-    public void afterPropertiesSet() throws Exception {
-        System.out.println("NetworkClient.afterPropertiesSet");
+    public void init() throws Exception {
+        System.out.println("NetworkClient.init");
         connect();
         call("초기화 연결 메시지");
     }
 
-    @Override
-    public void destroy() throws Exception {
-        System.out.println("NetworkClient.destroy");
+    public void close() throws Exception {
+        System.out.println("NetworkClient.close");
         disconnect();
     }
 }
