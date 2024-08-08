@@ -1,5 +1,6 @@
 package io.core.global.discount.repository;
 
+import io.core.global.annotation.MainDiscountPolicy;
 import io.core.global.member.entity.Grade;
 import io.core.global.member.entity.Member;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -18,7 +19,9 @@ import org.springframework.stereotype.Component;
 /**
  * @Primary는 우선순위를 정하는 방법이다. @Autowired 시에 여러 빈이 매칭되면 @Primary가 우선권을 가진다.
  */
-@Primary
+/*@Primary*/
+
+@MainDiscountPolicy
 
 public class RateDiscountPolicy implements DiscountPolicy {
     private int discountPercent = 10;

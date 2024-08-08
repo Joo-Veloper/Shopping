@@ -1,5 +1,6 @@
 package io.core.global.order.service;
 
+import io.core.global.annotation.MainDiscountPolicy;
 import io.core.global.discount.repository.DiscountPolicy;
 import io.core.global.member.entity.Member;
 import io.core.global.member.repository.MemberRepository;
@@ -56,7 +57,7 @@ public class OrderServiceImpl implements OrderService {
      */
     // 참고 : 수정자 주입을 포함한 나머지 주입 방식은 모두 생성자 이후에 호출되므로 필드에 final 키워드 사용할 수 없다.
     @Autowired // 생성자가 한 개 일때는 @Autowired 생략 가능
-    public OrderServiceImpl(MemberRepository memberRepository, /*@Qualifier("mainDiscountPolicy") */DiscountPolicy discountPolicy) {
+    public OrderServiceImpl(MemberRepository memberRepository, /*@Qualifier("mainDiscountPolicy") */@MainDiscountPolicy DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
