@@ -5,12 +5,14 @@ import io.core.global.member.entity.Member;
 import io.core.global.member.repository.MemberRepository;
 import io.core.global.order.entity.Order;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.util.Objects;
 
 @Component
-@RequiredArgsConstructor //자바 스프링에서 final이나 @NonNull이 붙은 필드에 대해 생성자를 자동으로 생성해주는 롬복 애노테이션
+//@RequiredArgsConstructor //자바 스프링에서 final이나 @NonNull이 붙은 필드에 대해 생성자를 자동으로 생성해주는 롬복 애노테이션
 public class OrderServiceImpl implements OrderService {
 
     /**
@@ -26,6 +28,9 @@ public class OrderServiceImpl implements OrderService {
     private final MemberRepository memberRepository;
     //@Autowired
     private final DiscountPolicy discountPolicy;
+
+    /*@Autowired
+    private DiscountPolicy rateDiscountPolicy;*/
 
     /**
      * 수정자 주입
@@ -50,11 +55,11 @@ public class OrderServiceImpl implements OrderService {
      * 주입 데이터 누락시 컴파일 오류 발생
      */
     // 참고 : 수정자 주입을 포함한 나머지 주입 방식은 모두 생성자 이후에 호출되므로 필드에 final 키워드 사용할 수 없다.
-    /*@Autowired // 생성자가 한 개 일때는 @Autowired 생략 가능
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+    @Autowired // 생성자가 한 개 일때는 @Autowired 생략 가능
+    public OrderServiceImpl(MemberRepository memberRepository, /*@Qualifier("mainDiscountPolicy") */DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
-    }*/
+    }
 
     /**
      * 일반 메서드 주입
