@@ -2,10 +2,14 @@ package io.core.scope;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
+import jakarta.inject.Provider;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Scope;
+
+import java.util.Objects;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -28,23 +32,45 @@ public class SingletonWithPrototypeTest1 {
     @Test
     void singletonClientUsePrototype() {
         AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(ClientBean.class, PrototypeBean.class);
+
         ClientBean clientBean1 = ac.getBean(ClientBean.class);
         int count1 = clientBean1.logic();
         assertThat(count1).isEqualTo(1);
 
         ClientBean clientBean2 = ac.getBean(ClientBean.class);
         int count2 = clientBean2.logic();
-        assertThat(count2).isEqualTo(2);
+        assertThat(count2).isEqualTo(1);
     }
 
     @Scope("singleton")
     static class ClientBean {
-        private final PrototypeBean prototypeBean; // 생성시점에 주입
+        // private final PrototypeBean prototypeBean; // 생성시점에 주입
+
+        /**
+         * @ObjectFactory : 기능 단순, 별도 라이브러리 필요 X , 스프링 의존.
+         * @ObjectProvider : ObjectFactory 상속, 옵션, 스트림 처리등 편의 긴으이 많고, 별도의 라이브러리 필요 없음, 스프링에 의존
+         */
+
+        /*@Autowired
+        private ObjectProvider<PrototypeBean> prototypeBeanProvider;*/
+
+        /**
+         * @Provider
+         * <li>1. get() 메서드 하나로 기능이 단순 -> prototypeBeanProvider.get();</li>
+         * <li>2. 별도의 라이브러리 필요 ! : jakarta.inject:jakarta.inject-api:2.0.1</li>
+         * <li>3. 자바 표준이므로 스프링 아닌 다른 컨테이너 사용 가능!</li>
+         */
+
         @Autowired
+        private Provider<PrototypeBean> prototypeBeanProvider;
+
+       /* @Autowired
         public ClientBean(PrototypeBean prototypeBean) {
             this.prototypeBean = prototypeBean;
-        }
+        }*/
+
         public int logic() {
+            PrototypeBean prototypeBean = prototypeBeanProvider.get();
             prototypeBean.addCount();
             int count = prototypeBean.getCount();
             return count;
